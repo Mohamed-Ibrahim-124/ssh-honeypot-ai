@@ -9,6 +9,7 @@ import asyncio
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
+
 # Models to test
 MODELS_TO_TEST = [
     "microsoft/DialoGPT-small",  # Current

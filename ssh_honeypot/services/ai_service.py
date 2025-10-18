@@ -11,6 +11,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 from ..config import settings
 
+
 logger = logging.getLogger(__name__)
 
 

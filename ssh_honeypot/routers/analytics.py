@@ -10,6 +10,7 @@ from ..services.honeypot_service import HoneypotService
 from ..services.service_manager import get_honeypot_service
 from ..utils.logging import get_logger
 
+
 logger = get_logger(__name__)
 router = APIRouter(prefix="/api/v1", tags=["analytics"])
 
