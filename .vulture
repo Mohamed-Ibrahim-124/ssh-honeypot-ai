@@ -1,0 +1,24 @@
+# Vulture configuration file
+# This file specifies which files and directories to exclude from dead code detection
+
+# Exclude virtual environments and cache directories
+venv/
+env/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.git/
+node_modules/
+site-packages/
+Scripts/
+
+# Exclude test files
+tests/
+test_*.py
+*_test.py
+
+# Exclude specific patterns
+*.pyc
+*.pyo
+*.pyd
