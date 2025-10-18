@@ -28,8 +28,16 @@ ssh_honeypot/
 │   ├── honeypot.py      # SSH command endpoints
 │   ├── analytics.py     # Threat analytics & reporting
 │   └── health.py        # Health check endpoints
-└── models/
-    └── schemas.py       # Pydantic data models
+├── models/
+│   └── schemas.py       # Pydantic data models
+├── utils/
+│   ├── helpers.py       # Utility functions
+│   └── logging.py      # Logging configuration
+├── tests/               # Test files
+├── examples/            # Usage examples
+├── docs/               # Documentation
+├── scripts/            # Development scripts
+└── logs/               # Log files (gitignored)
 ```
 
 ## 🛠️ Tech Stack
@@ -60,12 +68,23 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### 3. Configure Environment (Optional)
+```bash
+# Copy environment template
+cp env.example .env
+
+# Edit .env file with your settings
+# AI_MODEL_NAME=microsoft/DialoGPT-small
+# AI_MODEL_DEVICE=auto
+# DEBUG=false
+```
+
+### 4. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the Application
+### 5. Run the Application
 ```bash
 python run.py
 ```
@@ -111,6 +130,28 @@ bash: unknown_command: command not found
 
 ## 🔧 Configuration
 
+Edit `ssh_honeypot/config.py` or use environment variables:
+
+### Environment Variables
+Copy `env.example` to `.env` and customize:
+
+```bash
+# AI Model Configuration
+AI_MODEL_NAME=microsoft/DialoGPT-small
+AI_MODEL_DEVICE=auto  # "cuda" for GPU, "cpu" for CPU
+AI_MAX_TOKENS=100
+
+# Server Configuration
+HOST=0.0.0.0
+PORT=8080
+DEBUG=false
+
+# Security Settings
+ENABLE_CORS=true
+LOG_LEVEL=INFO
+```
+
+### Direct Configuration
 Edit `ssh_honeypot/config.py` to customize:
 
 ```python
@@ -155,6 +196,31 @@ Monitor threats and attacks through the analytics dashboard:
 - **Command Statistics**: Most common commands and patterns
 - **Geographic Data**: Attack source locations
 - **Time Analysis**: Attack patterns over time
+
+## 📚 Examples and Scripts
+
+### Examples Directory (`examples/`)
+- `basic_usage.py` - Basic honeypot usage example
+- `custom_config.py` - Custom configuration example
+- `README.md` - Examples documentation
+
+### Scripts Directory (`scripts/`)
+- `dev.py` - Development utilities (testing, linting, security checks)
+
+### Usage Examples
+```bash
+# Run basic example
+python examples/basic_usage.py
+
+# Run with custom configuration
+python examples/custom_config.py
+
+# Run development scripts
+python scripts/dev.py test      # Run tests
+python scripts/dev.py lint      # Run linting
+python scripts/dev.py security  # Run security checks
+python scripts/dev.py clean      # Clean project files
+```
 
 ## 🧪 Testing
 
@@ -222,7 +288,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Mohamed Ibrahim**
 - GitHub: [@Mohamed-Ibrahim-124](https://github.com/Mohamed-Ibrahim-124)
-- LinkedIn: [Your LinkedIn Profile]
+- LinkedIn: [Mohamed Ibrahim](https://www.linkedin.com/in/mohamedibrahim123/)
 
 ## 🙏 Acknowledgments
 

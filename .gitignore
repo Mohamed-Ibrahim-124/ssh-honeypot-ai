@@ -128,7 +128,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# IDE files
+# Local development files
+.pre-commit-config.yaml
+.vulture
+bandit-report.json
+CURSOR_SETUP.md
+*.log
+!logs/.gitkeep
+
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
@@ -145,12 +153,16 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-logs/
-*.log
+logs/*.log
+!logs/.gitkeep
 sessions.db
 honeypot.db
 .env.local
 .env.production
+
+# Keep logs directory but ignore log files
+logs/
+!logs/.gitkeep
 
 # Model cache
 .cache/

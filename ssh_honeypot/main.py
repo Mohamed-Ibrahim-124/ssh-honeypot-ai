@@ -17,6 +17,7 @@ from .services.honeypot_service import HoneypotService
 from .services.service_manager import set_honeypot_service
 from .utils.logging import get_logger, setup_logging
 
+
 # Setup logging
 setup_logging()
 logger = get_logger(__name__)

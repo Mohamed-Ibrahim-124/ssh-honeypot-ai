@@ -11,6 +11,7 @@ from typing import Dict
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
+
 # Models to test (ordered by preference)
 MODELS_TO_TEST = [
     {
@@ -141,7 +142,7 @@ async def test_model(model_info: Dict, test_command: str = "ls") -> Dict:
 
             except Exception as e:
                 results[command] = {
-                    "response": f"Error: {str(e)}",
+                    "response": f"Error: {e!s}",
                     "success": False,
                     "quality": False,
                 }

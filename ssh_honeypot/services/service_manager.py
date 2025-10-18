@@ -7,6 +7,7 @@ from typing import Optional
 
 from .honeypot_service import HoneypotService
 
+
 # Global service instance
 _honeypot_service_instance: Optional[HoneypotService] = None
 

@@ -11,6 +11,7 @@ from typing import Dict, List, Optional
 from ..core.honeypot import HoneypotCore
 from ..models.schemas import SessionInfo
 
+
 logger = logging.getLogger(__name__)
 
 
